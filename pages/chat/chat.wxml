@@ -1,0 +1,12 @@
+<view class="container-chat">
+  <scroll-view scroll-y class="userinfo-chat" style="height:480px;" scroll-top="{{top}}">
+    <view wx:for="{{link}}" wx:key="{{index}}" class="demo clearfix" >
+       <image src='{{index%2 == 0?touUrl:teuUrl}}' class='img {{index%2 == 1?"usermotto-left":"usermotto-right"}}'></image> 
+      <text class='{{index%2 == 1?"usermotto-left":"usermotto-right"}} {{item.length > 13?"eng":""}}'>{{item}}</text>
+    </view>
+  </scroll-view>
+  <view class="usermotto-chat">
+    <input class="input"  placeholder="请输入" bindinput="passWdInput" bindconfirm="chat" value='{{val}}' focus="{{focus}}" />
+    <text bindtap="chat">发送</text>
+  </view>
+</view>
